@@ -20,7 +20,7 @@ def index():
     results['q4'] = f"{x} + {y} = {x + y}"
     
     # Question 5-6: Name variable
-    name = "Minseo"
+    name = "Potato"
     results['q5'] = f"name = '{name}'"
     results['q6'] = f"Hello {name}"
     
