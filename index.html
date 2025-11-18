@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics Worksheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        
+        .question:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .answer {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .answer-dict {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .answer-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .answer-item strong {
+            color: #667eea;
+        }
+        
+        .extra-challenge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .extra-challenge a {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+        
+        .extra-challenge a:hover {
+            transform: scale(1.05);
+        }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Basics Worksheet</h1>
+        <p class="subtitle">By Potato</p>
+        
+        <div class="question">
+            <div class="question-number">Question 1: Assign the number 12 to a variable named x.</div>
+            <div class="answer">{{ results.q1 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 2: Assign the number 7.5 to a variable named y.</div>
+            <div class="answer">{{ results.q2 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 3: Print the values of x and y.</div>
+            <div class="answer">{{ results.q3 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 4: Add x and y together and print the result.</div>
+            <div class="answer">{{ results.q4 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 5: Create a variable called name and assign your first name as a string (text).</div>
+            <div class="answer">{{ results.q5 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 6: Print a sentence that says 'Hello' followed by your name variable.</div>
+            <div class="answer">{{ results.q6 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 7: Convert the integer x into a float and print it.</div>
+            <div class="answer">{{ results.q7 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 8: Convert the float y into an integer and print it.</div>
+            <div class="answer">{{ results.q8 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 9: Convert the number 45 into a string and print it.</div>
+            <div class="answer">{{ results.q9 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 10: Convert the string '123' into an integer and print it.</div>
+            <div class="answer">{{ results.q10 }}</div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Question 11: Create two variables, a = 10 and b = 3. Print their sum, difference, and product.</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>a:</strong> {{ results.q11.a }}</div>
+                    <div class="answer-item"><strong>b:</strong> {{ results.q11.b }}</div>
+                    <div class="answer-item"><strong>Sum:</strong> {{ results.q11.sum }}</div>
+                    <div class="answer-item"><strong>Difference:</strong> {{ results.q11.difference }}</div>
+                    <div class="answer-item"><strong>Product:</strong> {{ results.q11.product }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 12: Print the result of dividing a by b as a float.</div>
+            <div class="answer">{{ results.q12 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 13: Use integer division (//) to divide a by b and print the result.</div>
+            <div class="answer">{{ results.q13 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 14: Find the remainder when a is divided by b using the % operator.</div>
+            <div class="answer">{{ results.q14 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 15: Write code that prints: 'The value of a is 10 and the value of b is 3'.</div>
+            <div class="answer">{{ results.q15 }}</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 16: Create a variable temperature = 72.5 and convert it to an integer. Print both versions.</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>Float:</strong> {{ results.q16.float }}</div>
+                    <div class="answer-item"><strong>Integer:</strong> {{ results.q16.int }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 17: Write a program that takes two numbers and prints their average.</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>Number 1:</strong> {{ results.q17.num1 }}</div>
+                    <div class="answer-item"><strong>Number 2:</strong> {{ results.q17.num2 }}</div>
+                    <div class="answer-item"><strong>Average:</strong> {{ results.q17.average }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 18: Assign 5 to width and 8 to height. Print the area (width x height).</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>Width:</strong> {{ results.q18.width }}</div>
+                    <div class="answer-item"><strong>Height:</strong> {{ results.q18.height }}</div>
+                    <div class="answer-item"><strong>Area:</strong> {{ results.q18.area }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 19: Make a variable called price = 4.99 and quantity = 3. Print the total cost.</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>Price:</strong> ${{ results.q19.price }}</div>
+                    <div class="answer-item"><strong>Quantity:</strong> {{ results.q19.quantity }}</div>
+                    <div class="answer-item"><strong>Total Cost:</strong> ${{ "%.2f"|format(results.q19.total) }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number">Question 20: Create a variable age = '13'. Convert it to an integer and add 5, then print the result.</div>
+            <div class="answer">
+                <div class="answer-dict">
+                    <div class="answer-item"><strong>Original (string):</strong> '{{ results.q20.original }}'</div>
+                    <div class="answer-item"><strong>As Integer:</strong> {{ results.q20.as_int }}</div>
+                    <div class="answer-item"><strong>Age + 5:</strong> {{ results.q20.plus_5 }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="extra-challenge">
+            <h2 style="color: white; margin-bottom: 10px;">Extra Challenge</h2>
+            <p style="color: white;">Write a Python program that asks for your name and age, then prints 'Hello, [name]! You are [age] years old.'</p>
+            <a href="/extra">Try the Extra Challenge →</a>
+        </div>
+    </div>
+</body>
+</html>
+
